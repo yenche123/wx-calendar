@@ -35,7 +35,8 @@ const wxsMinifyOptions = {
         comments: /^!/
     },
     compress: {
-        hoist_vars: true
+        hoist_vars: true,
+        hoist_funs: true
     }
 }
 
