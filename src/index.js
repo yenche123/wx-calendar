@@ -556,7 +556,7 @@ Component({
                 days: weekdays,
                 bar: {...InitBarInfo },
                 trans: this.calcMonthPanelTrans(this.getDayWeekIdxInMonth(_date, days), weekdays.length),
-                wf: null
+                wf: DateHandler.WeekFirstDay(_date, this._weekStart)
             }, lunarinfo)
         },
         getMonthDays(date) {
