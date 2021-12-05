@@ -137,7 +137,7 @@ Component({
     methods: {
 
         /** initialize */
-        initialize(callback) {
+        initialize(callback = () => {}) {
 
             const layout = new LayoutCalc
             const { mainHeight, panelHeight, maxHeight, minHeight } = layout.layout()
@@ -159,9 +159,7 @@ Component({
                 currView: this._currView,
                 currViewName: this.data.view,
                 yearMs: this.setYearMs(this._selDay, this.data.currTab)
-            }, () => {
-                typeof callback === 'function' && callback()
-            })
+            }, callback)
         },
         calcWeekRects(callback) {
             this._rectsLoading = true
@@ -324,7 +322,7 @@ Component({
             }
             if (!viewNoChanged) {
                 if (this._currView == 2) {
-                    this.refreshWeeksPanel(this.data.currTab, false, false)
+                    this.refreshWeeksPanel(this.data.currTab, false, false, false)
                 } else {
                     this.refreshMonthPanel(this.data.currTab, false, false, false)
                 }
@@ -343,9 +341,9 @@ Component({
             })
             this.setData({ months })
         },
-        refreshWeeksPanel(current, refreshAll = false, refreshSelbar = true) {
+        refreshWeeksPanel(current, refreshAll = false, refreshSelbar = true, isSwiper = true) {
             if (current != this.data.currTab) this.setData({ currTab: current })
-            const { year, month, day } = this.getMonthWeekDay(current)
+            const { year, month, day } = isSwiper ? this.getMonthWeekDay(current) : this._selDay
             let setData = (_ => {
                 const edgeDiff = Math.floor((this.data.panels - 1) / 2)
                 for (let i = 0; i < this.data.panels; i++) {
