@@ -398,8 +398,8 @@ Component({
             } else if (isInSwiper >= 0) {
                 this.setData({ currTab: isInSwiper })
             } else {
-                this.refreshWeeksPanelByDate(this._today)
-                this.bindDateChange(this._today)
+                this.refreshWeeksPanelByDate(date)
+                this.bindDateChange(date)
             }
         },
         handleMonthToDate(date) {
@@ -413,8 +413,8 @@ Component({
             } else if (isInSwiper >= 0) {
                 this.setData({ currTab: isInSwiper })
             } else {
-                this.refreshMonthsPanelByDate(this._today)
-                this.bindDateChange(this._today)
+                this.refreshMonthsPanelByDate(date)
+                this.bindDateChange(date)
             }
         },
         refreshMonthsPanelByDate(date) {
