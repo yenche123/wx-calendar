@@ -60,7 +60,12 @@
             bindtouchstart="{{ calendar_wxs.touchStart }}"
             catchtouchmove="{{ calendar_wxs.touchMove }}" 
             catchtouchend="{{ calendar_wxs.touchEnd }}">
-            <swiper circular duration="{{ 300 }}" current="{{ currTab }}" class="wx-calendar-swiper" bindanimationfinish="calendarSwiperEnd">
+            <swiper 
+                circular 
+                duration="{{ 300 }}" 
+                current="{{ currTab }}" 
+                class="wx-calendar-swiper" 
+                bindanimationfinish="calendarSwiperEnd">
                 <swiper-item
                     wx:for="{{ months }}" 
                     wx:for-item="month" 

@@ -22,9 +22,13 @@ Page({
         this.calendar = this.selectComponent('#calendar')
 
         const timer = setTimeout(() => {
-            this.calendar.toDate(2021, 10, 25);
+            this.setData({
+                markers: [
+                    { year: 2021, month: 9, day: 28, type: 'corner', mark: '休', color: '#61b057' }
+                ]
+            })
             clearTimeout(timer)
-        }, 2000)
+        }, 5000)
 
     },
     handleCalendarDateChange({ detail }) {

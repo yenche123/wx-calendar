@@ -176,7 +176,7 @@
         width: 100%;
         text-align: center;
         &.solar {
-            color: theme(date-solar-color);
+            color: theme(date-solar-color) !important;
         }
         &-schedules {
             position: absolute;

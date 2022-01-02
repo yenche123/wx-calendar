@@ -1,7 +1,6 @@
 <view class="container">
     <calendar 
         id="calendar" 
-        view="week"
         _markers="{{ markers }}" 
         bindload="handleCalendarLoad"
         binddatechange="handleCalendarDateChange"
