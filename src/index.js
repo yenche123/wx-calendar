@@ -111,28 +111,29 @@ Component({
         currYearsTab: INIT_TAB
     },
     attached() {
-        this._rects = []
-        this._today = null
-        this._selDay = null
-        this._currWeekIdx = 0
-        this._rectsLoading = true
-        this._yearPanelShow = false
-        this._weekStart = this.data._startWeek
-        this._currView = this.data.view === 'week' ? 2 : 1
-        if (this.data.showMark) this._dateMarkers = this.initMarkers()
-        this._handler = new DateHandler(this, this._weekStart)
-
-        this.initialize(() => {
-            this.calcWeekRects(() => {
-                if (this._currView == 2) {
-                    this.initWeeks()
-                } else {
-                    this.initMonths()
-                }
-                this.bindLoad()
-                this.setSelBar()
+        setTimeout(() => {
+            this._rects = []
+            this._today = null
+            this._selDay = null
+            this._currWeekIdx = 0
+            this._rectsLoading = true
+            this._yearPanelShow = false
+            this._weekStart = this.data._startWeek
+            this._currView = this.data.view === 'week' ? 2 : 1
+            if (this.data.showMark) this._dateMarkers = this.initMarkers()
+            this._handler = new DateHandler(this, this._weekStart)
+            this.initialize(() => {
+                this.calcWeekRects(() => {
+                    if (this._currView == 2) {
+                        this.initWeeks()
+                    } else {
+                        this.initMonths()
+                    }
+                    this.bindLoad()
+                    this.setSelBar()
+                })
             })
-        })
+        }, 0)
     },
     methods: {
 
