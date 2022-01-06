@@ -21,23 +21,39 @@ Page({
         console.log('calendar-load', detail)
         this.calendar = this.selectComponent('#calendar')
 
-        const timefunc = callback => {
-            const timer = setTimeout(() => {
-                callback()
-                clearTimeout(timer)
-            }, 5000)
+        // const timefunc = callback => {
+        //     const timer = setTimeout(() => {
+        //         callback()
+        //         clearTimeout(timer)
+        //     }, 5000)
 
-        }
+        // }
 
-        const timer = setTimeout(() => {
-            this.calendar.toDate('2021-08-08');
-            timefunc(() => {
-                this.calendar.toDate('2022-01-02');
-            })
-            clearTimeout(timer)
-        }, 5000)
+        // const timer = setTimeout(() => {
+        //     this.calendar.toDate('2021-08-08');
+        //     timefunc(() => {
+        //         this.calendar.toDate('2022-08-09');
+        //     })
+        //     clearTimeout(timer)
+        // }, 5000)
 
     },
+    onTap() {
+        this.setData({
+            markers: [
+                { year: 2022, month: 1, day: 10, type: 'holiday', mark: '愚人节', color: '#2a97ff', bgColor: '#cce6ff' },
+                { year: 2022, month: 1, day: 11, type: 'corner', mark: '休', color: '#61b057' },
+                { year: 2022, month: 1, day: 12, type: 'schedule', mark: '测试一下哈哈哈', color: '#2a97ff', bgColor: '#cce6ff' },
+                { year: 2022, month: 1, day: 12, type: 'schedule', mark: '测试一下哈哈哈', color: '#2a97ff', bgColor: '#cce6ff' }
+            ]
+        })
+    },
+    // calendarSwiperChange(e) {
+    //     console.log('calendarSwiperChange', e)
+    //     const diff = e.detail.current - this._swiperCurr
+    //     this._swiperDiff += Math.abs(diff) == 1 ? diff : diff / (1 - this.panels)
+    //     this._swiperCurr = e.detail.current
+    // },
     handleCalendarDateChange({ detail }) {
         console.log('calendar-date-change', detail)
     },

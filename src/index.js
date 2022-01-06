@@ -395,7 +395,7 @@ Component({
                     const idx = month.idays.findIndex(d => d.month == date.month && d.day == date.day)
                     this.setSelDate(idx)
                 }
-                this.bindDateChange(this._today, false)
+                this.bindDateChange(date, false)
             } else if (isInSwiper >= 0) {
                 this.setData({ currTab: isInSwiper })
             } else {
@@ -410,7 +410,7 @@ Component({
                 const month = this.data.months[currTab]
                 const findIdx = month.idays.findIndex(_date => (_date.month == month.month && _date.day == date.day))
                 this.setSelDate(findIdx)
-                this.bindDateChange(this._today, false)
+                this.bindDateChange(date, false)
             } else if (isInSwiper >= 0) {
                 this.setData({ currTab: isInSwiper })
             } else {

@@ -4,5 +4,9 @@
         _markers="{{ markers }}" 
         bindload="handleCalendarLoad"
         binddatechange="handleCalendarDateChange"
-        bindviewchange="handleCalendarPanelViewChange"></calendar>
+        bindviewchange="handleCalendarPanelViewChange">
+        <button class="btn" bindtap="onTap">
+            按钮文本
+        </button>    
+    </calendar>
 </view>

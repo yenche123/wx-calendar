@@ -195,7 +195,7 @@
             }
             &-item {
                 font-size: $wx-calendar-schedule-size;
-                line-height: $wx-calendar-schedule-size; // 26rpx
+                line-height: 26rpx;
                 font-weight: bold;
                 color: theme(schedule-color);
                 background-color: theme(schedule-bg);

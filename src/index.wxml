@@ -108,14 +108,14 @@
                                         style="color: {{ d.marker.holiday[0].color ? d.marker.holiday[0].color : '#2a97ff' }};"
                                         >{{ d.marker.holiday[0].mark }}</text>
                                     <text wx:elif="{{ showLunar }}">{{ d.lunar.lunar_day }}</text>
-                                    <view class="wx-calendar-panel-solar-schedules" wx:if="{{ d.marker && d.marker.schedule.length > 0 }}">
+                                    <view class="wx-calendar-panel-solar-schedules {{ currView == 3 ? 'show' : '' }}" wx:if="{{ d.marker && d.marker.schedule.length > 0 }}">
                                         <view 
                                             class="wx-calendar-panel-solar-schedules-item"
                                             style="{{ d.marker.schedule[0].color ? 'color:' + d.marker.schedule[0].color + ';' : '' }}{{ d.marker.schedule[0].bgColor ? 'background-color:' + d.marker.schedule[0].bgColor + ';' : '' }}"
                                             >{{ d.marker.schedule[0].mark }}</view>
                                         <view 
                                             class="wx-calendar-panel-solar-schedules-more" 
-                                            wx:if="{{ d.marker.schedule.length > 2 }}"
+                                            wx:if="{{ d.marker.schedule.length > 1 }}"
                                             >+{{ d.marker.schedule.length - 1 }}</view>
                                     </view>
                                 </view>
